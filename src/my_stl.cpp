@@ -30,4 +30,28 @@ std::string stringRepeat(
     return result;
 }
 
+
+std::string zFill(
+    const std::string& st,
+    int width,
+    const std::string& fill
+)
+{
+    int len = st.length();
+
+    if (len >= width)
+    {
+        return st;
+    }
+
+    std::string result = st;
+
+    for (int i = 0; i < width - len; i++)
+    {
+        result = fill + result;
+    }
+
+    return result;
+}
+
 }
