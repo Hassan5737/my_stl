@@ -1,7 +1,9 @@
 #include <iostream>
 #include "my_stl.h"
 
+using namespace std;
+
 int main()
 {
-    std::cout << "my_stl library works!" << std::endl;
+    cout << "my_stl library works!" << endl;
 }
