@@ -1,0 +1,22 @@
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directories
+build/
+bin/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
