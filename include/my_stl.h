@@ -48,6 +48,23 @@ std::string zFill(
     const std::string& fill = "0"
 );
 
+/**
+ * stringReverse
+ * Returns a new string with the characters reversed.
+ *
+ * Parameters:
+ * st -> The original string
+ *
+ * Returns:
+ * A new string with characters in reverse order.
+ *
+ * Example:
+ * stringReverse("hello") -> "olleh"
+ */
+std::string stringReverse(
+    const std::string& st
+);
+
 }
 
 #endif

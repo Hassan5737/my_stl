@@ -54,4 +54,19 @@ std::string zFill(
     return result;
 }
 
+
+std::string stringReverse(
+    const std::string& st
+)
+{
+    std::string result;
+
+    for (int i = st.length() - 1; i >= 0; i--)
+    {
+        result += st[i];
+    }
+
+    return result;
+}
+
 }
