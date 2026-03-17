@@ -118,4 +118,41 @@ std::vector<LetterInfo> generateAlphabetRange(
     return result;
 }
 
+int getMin(const std::vector<int>& nums)
+{
+    if (nums.empty())
+        return 0;
+
+    int minValue = nums[0];
+
+    for (size_t i = 1; i < nums.size(); ++i)
+    {
+        if (nums[i] < minValue)
+        {
+            minValue = nums[i];
+        }
+    }
+
+    return minValue;
+}
+
+
+int getMax(const std::vector<int>& nums)
+{
+    if (nums.empty())
+        return 0;
+
+    int maxValue = nums[0];
+
+    for (size_t i = 1; i < nums.size(); ++i)
+    {
+        if (nums[i] > maxValue)
+        {
+            maxValue = nums[i];
+        }
+    }
+
+    return maxValue;
+}
+
 }

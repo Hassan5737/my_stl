@@ -82,31 +82,41 @@ struct LetterInfo
 /**
  * generateAlphabetRange
  * Generates a range of alphabet letters with their ASCII values.
- *
- * Parameters:
- * start -> Starting character (must be a letter)
- * end   -> Ending character (must be a letter)
- *
- * Returns:
- * A vector of LetterInfo containing uppercase and lowercase
- * representations and their ASCII values.
- *
- * Notes:
- * - If inputs are not alphabetic, returns an empty vector.
- * - Automatically normalizes range (handles start > end).
- *
- * Example:
- * generateAlphabetRange('a', 'c') ->
- * [
- *   { 'A', 65, 'a', 97 },
- *   { 'B', 66, 'b', 98 },
- *   { 'C', 67, 'c', 99 }
- * ]
  */
 std::vector<LetterInfo> generateAlphabetRange(
     char start,
     char end
 );
+
+/**
+ * getMin
+ * Returns the minimum value in a vector of integers.
+ *
+ * Parameters:
+ * nums -> Input vector
+ *
+ * Returns:
+ * The smallest value in the vector.
+ *
+ * Notes:
+ * - Returns 0 if the vector is empty.
+ */
+int getMin(const std::vector<int>& nums);
+
+/**
+ * getMax
+ * Returns the maximum value in a vector of integers.
+ *
+ * Parameters:
+ * nums -> Input vector
+ *
+ * Returns:
+ * The largest value in the vector.
+ *
+ * Notes:
+ * - Returns 0 if the vector is empty.
+ */
+int getMax(const std::vector<int>& nums);
 
 }
 
