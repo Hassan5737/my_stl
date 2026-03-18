@@ -288,4 +288,127 @@ bool isNaN(const std::string& st)
     return false;
 }
 
+
+std::string trimString(
+    const std::string& st,
+    const std::string& direction,
+    char ch
+)
+{
+    size_t start = 0;
+    size_t end = st.length();
+
+    if (direction == "Left" || direction == "All")
+    {
+        while (start < end && st[start] == ch)
+            start++;
+    }
+
+    if (direction == "Right" || direction == "All")
+    {
+        while (end > start && st[end - 1] == ch)
+            end--;
+    }
+
+    return st.substr(start, end - start);
+}
+
+
+std::string substring(
+    const std::string& st,
+    int start,
+    int end,
+    bool incEnd
+)
+{
+    if (start < 0 || end > (int)st.length() || start >= end)
+        return "";
+
+    if (incEnd)
+        end++;
+
+    return st.substr(start, end - start);
+}
+
+
+std::string cleanString(
+    const std::string& st,
+    bool keepNums
+)
+{
+    std::string result;
+    result.reserve(st.size());
+
+    for (char c : st)
+    {
+        if ((c >= 'A' && c <= 'Z') ||
+            (c >= 'a' && c <= 'z') ||
+            (c == '_') ||
+            (keepNums && c >= '0' && c <= '9'))
+        {
+            result += c;
+        }
+    }
+
+    return result;
+}
+
+
+std::string parseQueryString(
+    const std::string& st
+)
+{
+    std::string result;
+    result.reserve(st.size());
+
+    for (char c : st)
+    {
+        if (c == '=')
+        {
+            result += ": ";
+        }
+        else if (c == '&')
+        {
+            result += '\n';
+        }
+        else
+        {
+            result += c;
+        }
+    }
+
+    return result;
+}
+
+
+int wordCount(
+    const std::string& st,
+    char sep
+)
+{
+    int count = 0;
+    bool inWord = false;
+
+    for (char c : st)
+    {
+        if (c == sep)
+        {
+            if (inWord)
+            {
+                count++;
+                inWord = false;
+            }
+        }
+        else
+        {
+            inWord = true;
+        }
+    }
+
+    if (inWord)
+        count++;
+
+    return count;
+}
+
 }

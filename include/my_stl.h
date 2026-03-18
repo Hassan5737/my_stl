@@ -212,6 +212,106 @@ int parseInt(const std::string& st);
  */
 bool isNaN(const std::string& st);
 
+
+/**
+ * trimString
+ * Trims characters from the string based on direction.
+ *
+ * Parameters:
+ * st        -> The original string
+ * direction -> "Left", "Right", or "All"
+ * ch        -> Character to trim (default = space)
+ *
+ * Returns:
+ * A new trimmed string.
+ *
+ * Example:
+ * trimString("  hello  ") -> "hello"
+ */
+std::string trimString(
+    const std::string& st,
+    const std::string& direction = "All",
+    char ch = ' '
+);
+
+/**
+ * substring
+ * Extracts a portion of the string.
+ *
+ * Parameters:
+ * st     -> The original string
+ * start  -> Starting index
+ * end    -> Ending index
+ * incEnd -> Include end index or not
+ *
+ * Returns:
+ * Extracted substring.
+ *
+ * Notes:
+ * - Returns empty string if indices are invalid.
+ */
+std::string substring(
+    const std::string& st,
+    int start,
+    int end,
+    bool incEnd = false
+);
+
+/**
+ * cleanString
+ * Removes unwanted characters from a string.
+ *
+ * Parameters:
+ * st       -> The original string
+ * keepNums -> Keep digits or not
+ *
+ * Returns:
+ * Cleaned string.
+ *
+ * Notes:
+ * - Keeps letters and underscore.
+ * - Optionally keeps numbers.
+ */
+std::string cleanString(
+    const std::string& st,
+    bool keepNums = true
+);
+
+/**
+ * parseQueryString
+ * Converts query string format into readable format.
+ *
+ * Parameters:
+ * st -> Input query string
+ *
+ * Returns:
+ * Formatted string.
+ *
+ * Example:
+ * name=Osama&age=40 ->
+ * name: Osama
+ * age: 40
+ */
+std::string parseQueryString(
+    const std::string& st
+);
+
+/**
+ * wordCount
+ * Counts the number of words in a string.
+ *
+ * Parameters:
+ * st  -> The original string
+ * sep -> Separator character (default = space)
+ *
+ * Returns:
+ * Number of words.
+ */
+int wordCount(
+    const std::string& st,
+    char sep = ' '
+);
+
 }
 
 #endif
