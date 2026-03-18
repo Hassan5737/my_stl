@@ -170,6 +170,48 @@ std::string toLowerCase(const std::string& st);
  */
 std::string swapCase(const std::string& st);
 
+/**
+ * parseInt
+ * Converts a numeric string to an integer.
+ *
+ * Parameters:
+ * st -> Input string
+ *
+ * Returns:
+ * Parsed integer value.
+ *
+ * Notes:
+ * - Supports negative numbers.
+ * - Stops parsing at first non-digit character.
+ * - Returns 0 if string is empty.
+ *
+ * Example:
+ * parseInt("123abc") -> 123
+ * parseInt("-45xyz") -> -45
+ */
+int parseInt(const std::string& st);
+
+/**
+ * isNaN
+ * Checks if a string is not a valid number.
+ *
+ * Parameters:
+ * st -> Input string
+ *
+ * Returns:
+ * true  -> If string contains non-digit characters
+ * false -> If string is a valid number
+ *
+ * Notes:
+ * - Supports negative numbers.
+ * - Empty string is considered not a number.
+ *
+ * Example:
+ * isNaN("1234") -> false
+ * isNaN("12a3") -> true
+ */
+bool isNaN(const std::string& st);
+
 }
 
 #endif

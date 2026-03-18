@@ -227,4 +227,65 @@ std::string swapCase(const std::string& st)
     return result;
 }
 
+int parseInt(const std::string& st)
+{
+    if (st.empty())
+        return 0;
+
+    int result = 0;
+    int sign = 1;
+    size_t i = 0;
+
+    if (st[0] == '-')
+    {
+        sign = -1;
+        i = 1;
+    }
+
+    for (; i < st.length(); i++)
+    {
+        char c = st[i];
+
+        if (c >= '0' && c <= '9')
+        {
+            result = result * 10 + (c - '0');
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return result * sign;
+}
+
+
+bool isNaN(const std::string& st)
+{
+    if (st.empty())
+        return true;
+
+    size_t i = 0;
+
+    if (st[0] == '-')
+    {
+        if (st.length() == 1)
+            return true;
+
+        i = 1;
+    }
+
+    for (; i < st.length(); i++)
+    {
+        char c = st[i];
+
+        if (c < '0' || c > '9')
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 }
