@@ -118,6 +118,58 @@ int getMin(const std::vector<int>& nums);
  */
 int getMax(const std::vector<int>& nums);
 
+/**
+ * getSumOfNumbers
+ * Performs an operation on all elements in the vector.
+ *
+ * Parameters:
+ * nums      -> Input vector
+ * operation -> Operation to apply ('+', '-', '*')
+ *
+ * Returns:
+ * The result after applying the operation.
+ *
+ * Notes:
+ * - Returns 0 if the vector is empty or operation is invalid.
+ */
+int getSumOfNumbers(const std::vector<int>& nums, char operation = '+');
+
+/**
+ * toUpperCase
+ * Converts all characters in a string to uppercase.
+ *
+ * Parameters:
+ * st -> The original string
+ *
+ * Returns:
+ * A new string with all characters in uppercase.
+ */
+std::string toUpperCase(const std::string& st);
+
+/**
+ * toLowerCase
+ * Converts all characters in a string to lowercase.
+ *
+ * Parameters:
+ * st -> The original string
+ *
+ * Returns:
+ * A new string with all characters in lowercase.
+ */
+std::string toLowerCase(const std::string& st);
+
+/**
+ * swapCase
+ * Swaps the case of each character in a string.
+ *
+ * Parameters:
+ * st -> The original string
+ *
+ * Returns:
+ * A new string with swapped character cases.
+ */
+std::string swapCase(const std::string& st);
+
 }
 
 #endif

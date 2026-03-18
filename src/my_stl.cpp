@@ -1,6 +1,6 @@
 #include "my_stl.h"
-#include <cctype>   // isalpha, toupper, tolower
-#include <algorithm> // swap
+#include <cctype>
+#include <algorithm>
 
 namespace my_stl
 {
@@ -74,7 +74,6 @@ std::string stringReverse(
 
 /**
  * generateAlphabetRange
- * Implementation
  */
 std::vector<LetterInfo> generateAlphabetRange(
     char start,
@@ -83,17 +82,14 @@ std::vector<LetterInfo> generateAlphabetRange(
 {
     std::vector<LetterInfo> result;
 
-   
     if (!std::isalpha(start) || !std::isalpha(end))
     {
         return result;
     }
 
-    // Normalize to uppercase
     start = std::toupper(start);
     end   = std::toupper(end);
 
-    
     if (start > end)
     {
         std::swap(start, end);
@@ -117,6 +113,7 @@ std::vector<LetterInfo> generateAlphabetRange(
 
     return result;
 }
+
 
 int getMin(const std::vector<int>& nums)
 {
@@ -153,6 +150,81 @@ int getMax(const std::vector<int>& nums)
     }
 
     return maxValue;
+}
+
+
+int getSumOfNumbers(const std::vector<int>& nums, char operation)
+{
+    if (nums.empty())
+        return 0;
+
+    int result = (operation == '*') ? 1 : 0;
+
+    for (int num : nums)
+    {
+        switch (operation)
+        {
+            case '+': result += num; break;
+            case '-': result -= num; break;
+            case '*': result *= num; break;
+            default: return 0;
+        }
+    }
+
+    return result;
+}
+
+
+std::string toUpperCase(const std::string& st)
+{
+    std::string result;
+    result.reserve(st.size());
+
+    for (char c : st)
+    {
+        result += std::toupper(static_cast<unsigned char>(c));
+    }
+
+    return result;
+}
+
+
+std::string toLowerCase(const std::string& st)
+{
+    std::string result;
+    result.reserve(st.size());
+
+    for (char c : st)
+    {
+        result += std::tolower(static_cast<unsigned char>(c));
+    }
+
+    return result;
+}
+
+
+std::string swapCase(const std::string& st)
+{
+    std::string result;
+    result.reserve(st.size());
+
+    for (char c : st)
+    {
+        if (std::islower(static_cast<unsigned char>(c)))
+        {
+            result += std::toupper(static_cast<unsigned char>(c));
+        }
+        else if (std::isupper(static_cast<unsigned char>(c)))
+        {
+            result += std::tolower(static_cast<unsigned char>(c));
+        }
+        else
+        {
+            result += c;
+        }
+    }
+
+    return result;
 }
 
 }
