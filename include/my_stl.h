@@ -350,6 +350,64 @@ bool inArray(
     int target
 );
 
+/**
+ * roundNumber
+ * Rounds a floating-point number to the nearest integer.
+ *
+ * Parameters:
+ * num -> Input number
+ *
+ * Returns:
+ * Rounded integer value.
+ *
+ * Notes:
+ * - Handles both positive and negative numbers.
+ */
+int roundNumber(double num);
+
+/**
+ * floorNumber
+ * Returns the largest integer less than or equal to the given number.
+ *
+ * Parameters:
+ * num -> Input number
+ *
+ * Returns:
+ * Floor value as integer.
+ */
+int floorNumber(double num);
+
+/**
+ * ceilNumber
+ * Returns the smallest integer greater than or equal to the given number.
+ *
+ * Parameters:
+ * num -> Input number
+ *
+ * Returns:
+ * Ceil value as integer.
+ */
+int ceilNumber(double num);
+
+/**
+ * join
+ * Joins elements of a string vector into a single string with a separator.
+ *
+ * Parameters:
+ * names -> Input vector of strings
+ * sep   -> Separator between elements (default = ", ")
+ *
+ * Returns:
+ * Joined string.
+ *
+ * Example:
+ * {"A", "B", "C"} -> "A, B, C"
+ */
+std::string join(
+    const std::vector<std::string>& names,
+    const std::string& sep = ", "
+);
+
 }
 
 #endif

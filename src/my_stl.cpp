@@ -451,4 +451,55 @@ bool inArray(
     return false;
 }
 
+int floorNumber(double num)
+{
+    int i = static_cast<int>(num);
+
+    if (num < 0 && num != i)
+        return i - 1;
+
+    return i;
+}
+
+
+int ceilNumber(double num)
+{
+    int i = static_cast<int>(num);
+
+    if (num > 0 && num != i)
+        return i + 1;
+
+    return i;
+}
+
+
+int roundNumber(double num)
+{
+    if (num >= 0)
+        return static_cast<int>(num + 0.5);
+    else
+        return static_cast<int>(num - 0.5);
+}
+
+
+std::string join(
+    const std::vector<std::string>& names,
+    const std::string& sep
+)
+{
+    std::string result;
+
+    for (size_t i = 0; i < names.size(); i++)
+    {
+        result += names[i];
+
+        if (i != names.size() - 1)
+        {
+            result += sep;
+        }
+    }
+
+    return result;
+}
+
 }
