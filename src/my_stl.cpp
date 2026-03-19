@@ -411,4 +411,44 @@ int wordCount(
     return count;
 }
 
+bool isTitleCase(const std::string& st)
+{
+    if (st.empty())
+        return false;
+
+    if (!std::isupper(static_cast<unsigned char>(st[0])))
+        return false;
+
+    for (size_t i = 0; i < st.length(); i++)
+    {
+        if (st[i] == ' ')
+        {
+            if (i + 1 >= st.length() ||
+                !std::isupper(static_cast<unsigned char>(st[i + 1])))
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+
+bool inArray(
+    const std::vector<int>& arr,
+    int target
+)
+{
+    for (int num : arr)
+    {
+        if (num == target)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 }

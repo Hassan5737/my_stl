@@ -312,6 +312,44 @@ int wordCount(
     char sep = ' '
 );
 
+/**
+ * isTitleCase
+ * Checks if the first letter of each word is uppercase.
+ *
+ * Parameters:
+ * st -> The original string
+ *
+ * Returns:
+ * true  -> If each word starts with an uppercase letter
+ * false -> Otherwise
+ *
+ * Notes:
+ * - Words are separated by spaces.
+ * - Returns false if string is empty.
+ *
+ * Example:
+ * isTitleCase("Hello World") -> true
+ * isTitleCase("hello World") -> false
+ */
+bool isTitleCase(const std::string& st);
+
+/**
+ * inArray
+ * Checks if a value exists in a vector.
+ *
+ * Parameters:
+ * arr    -> Input vector
+ * target -> Value to search for
+ *
+ * Returns:
+ * true  -> If value exists in the vector
+ * false -> Otherwise
+ */
+bool inArray(
+    const std::vector<int>& arr,
+    int target
+);
+
 }
 
 #endif
