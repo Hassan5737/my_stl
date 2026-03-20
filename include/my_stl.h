@@ -408,6 +408,25 @@ std::string join(
     const std::string& sep = ", "
 );
 
+/**
+ * fillVector
+ * Creates a vector filled with a specific value.
+ *
+ * Parameters:
+ * num -> Number of elements
+ * val -> Value to fill the vector with
+ *
+ * Returns:
+ * A vector containing the specified value repeated.
+ *
+ * Example:
+ * fillVector(3, "Hi") -> {"Hi", "Hi", "Hi"}
+ */
+std::vector<std::string> fillVector(
+    int num,
+    const std::string& val
+);
+
 }
 
 #endif

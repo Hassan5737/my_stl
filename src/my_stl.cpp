@@ -502,4 +502,12 @@ std::string join(
     return result;
 }
 
+std::vector<std::string> fillVector(
+    int num,
+    const std::string& val
+)
+{
+    return std::vector<std::string>(num, val);
+}
+
 }
