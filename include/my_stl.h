@@ -480,6 +480,33 @@ std::string slice(
     int step = 1
 );
 
+/**
+ * ord
+ * Returns the ASCII value of the first character of a string.
+ *
+ * Parameters:
+ * st -> Input string
+ *
+ * Returns:
+ * ASCII value of the first character.
+ *
+ * Notes:
+ * - Returns 0 if string is empty.
+ */
+int ord(const std::string& st);
+
+/**
+ * chr
+ * Returns a character from an ASCII value.
+ *
+ * Parameters:
+ * code -> ASCII value
+ *
+ * Returns:
+ * Corresponding character.
+ */
+char chr(int code);
+
 }
 
 #endif

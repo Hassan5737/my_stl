@@ -592,4 +592,18 @@ std::string slice(
     return result;
 }
 
+int ord(const std::string& st)
+{
+    if (st.empty())
+        return 0;
+
+    return static_cast<int>(st[0]);
+}
+
+
+char chr(int code)
+{
+    return static_cast<char>(code);
+}
+
 }
