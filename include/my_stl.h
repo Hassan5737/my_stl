@@ -450,6 +450,36 @@ std::vector<int> createRange(
     int end
 );
 
+/**
+ * slice
+ * Extracts a portion of a string with support for step and negative indices.
+ *
+ * Parameters:
+ * st    -> The original string
+ * start -> Starting index (can be negative)
+ * end   -> Ending index (can be negative)
+ * step  -> Step size (can be negative, cannot be 0)
+ *
+ * Returns:
+ * Extracted string based on slicing rules.
+ *
+ * Notes:
+ * - Negative indices count from the end of the string.
+ * - Step can be positive (forward) or negative (reverse).
+ * - Returns empty string if step is 0 or indices are invalid.
+ *
+ * Example:
+ * slice("Hello", 0, 5, 1)  -> "Hello"
+ * slice("Hello", 0, 5, 2)  -> "Hlo"
+ * slice("Hello", -1, -6, -1) -> "olleH"
+ */
+std::string slice(
+    const std::string& st,
+    int start,
+    int end,
+    int step = 1
+);
+
 }
 
 #endif

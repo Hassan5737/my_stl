@@ -539,4 +539,57 @@ std::vector<int> createRange(
     return result;
 }
 
+std::string slice(
+    const std::string& st,
+    int start,
+    int end,
+    int step
+)
+{
+    std::string result;
+
+    int n = st.length();
+
+    if (step == 0)
+        return result;
+
+    // Handle negative indices
+    if (start < 0) start += n;
+    if (end < 0) end += n;
+
+    // Clamp values
+    if (step > 0)
+    {
+        if (start < 0) start = 0;
+        if (end > n) end = n;
+
+        if (start >= end)
+            return result;
+
+        result.reserve((end - start) / step + 1);
+
+        for (int i = start; i < end; i += step)
+        {
+            result += st[i];
+        }
+    }
+    else
+    {
+        if (start >= n) start = n - 1;
+        if (end < -1) end = -1;
+
+        if (start <= end)
+            return result;
+
+        result.reserve((start - end) / (-step) + 1);
+
+        for (int i = start; i > end; i += step)
+        {
+            result += st[i];
+        }
+    }
+
+    return result;
+}
+
 }
