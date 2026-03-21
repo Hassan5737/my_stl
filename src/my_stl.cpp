@@ -510,4 +510,33 @@ std::vector<std::string> fillVector(
     return std::vector<std::string>(num, val);
 }
 
+std::vector<int> createRange(
+    int start,
+    int end
+)
+{
+    std::vector<int> result;
+
+    if (start <= end)
+    {
+        result.reserve(end - start + 1);
+
+        for (int i = start; i <= end; i++)
+        {
+            result.push_back(i);
+        }
+    }
+    else
+    {
+        result.reserve(start - end + 1);
+
+        for (int i = start; i >= end; i--)
+        {
+            result.push_back(i);
+        }
+    }
+
+    return result;
+}
+
 }

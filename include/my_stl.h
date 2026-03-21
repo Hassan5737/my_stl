@@ -427,6 +427,29 @@ std::vector<std::string> fillVector(
     const std::string& val
 );
 
+/**
+ * createRange
+ * Creates a range of integers between two values (inclusive).
+ *
+ * Parameters:
+ * start -> Starting value
+ * end   -> Ending value
+ *
+ * Returns:
+ * A vector containing the range of integers.
+ *
+ * Notes:
+ * - Supports both ascending and descending ranges.
+ *
+ * Example:
+ * createRange(5, 10) -> {5, 6, 7, 8, 9, 10}
+ * createRange(10, 5) -> {10, 9, 8, 7, 6, 5}
+ */
+std::vector<int> createRange(
+    int start,
+    int end
+);
+
 }
 
 #endif
