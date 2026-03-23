@@ -606,4 +606,31 @@ char chr(int code)
     return static_cast<char>(code);
 }
 
+bool startsWith(
+    const std::string& st,
+    const std::string& prefix,
+    bool caseSensitive
+)
+{
+    if (st.length() < prefix.length())
+        return false;
+
+    for (size_t i = 0; i < prefix.length(); i++)
+    {
+        char a = st[i];
+        char b = prefix[i];
+
+        if (!caseSensitive)
+        {
+            a = std::tolower(static_cast<unsigned char>(a));
+            b = std::tolower(static_cast<unsigned char>(b));
+        }
+
+        if (a != b)
+            return false;
+    }
+
+    return true;
+}
+
 }

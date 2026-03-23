@@ -507,6 +507,28 @@ int ord(const std::string& st);
  */
 char chr(int code);
 
+/**
+ * startsWith
+ * Checks if a string starts with a given prefix.
+ *
+ * Parameters:
+ * st            -> The original string
+ * prefix        -> Prefix to check
+ * caseSensitive -> Whether comparison is case-sensitive
+ *
+ * Returns:
+ * true  -> If string starts with prefix
+ * false -> Otherwise
+ *
+ * Notes:
+ * - Returns false if prefix is longer than string.
+ */
+bool startsWith(
+    const std::string& st,
+    const std::string& prefix,
+    bool caseSensitive = true
+);
+
 }
 
 #endif
