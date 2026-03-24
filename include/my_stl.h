@@ -529,6 +529,75 @@ bool startsWith(
     bool caseSensitive = true
 );
 
+/**
+ * pushItem
+ * Adds an item to the end of a vector.
+ *
+ * Parameters:
+ * v    -> Input vector
+ * item -> Item to add
+ *
+ * Returns:
+ * A new vector with the item appended.
+ */
+std::vector<std::string> pushItem(
+    const std::vector<std::string>& v,
+    const std::string& item
+);
+
+/**
+ * moneyFormat
+ * Formats a number with commas as thousands separators.
+ *
+ * Parameters:
+ * n -> Input number
+ *
+ * Returns:
+ * Formatted string representation.
+ *
+ * Example:
+ * 1000000 -> "1,000,000"
+ */
+std::string moneyFormat(int n);
+
+/**
+ * replaceStrings
+ * Replaces occurrences of a string in a vector.
+ *
+ * Parameters:
+ * sts    -> Input vector
+ * oldVal -> Value to replace
+ * newVal -> New value
+ * count  -> Number of replacements (default = 1)
+ *
+ * Returns:
+ * Updated vector after replacements.
+ */
+std::vector<std::string> replaceStrings(
+    std::vector<std::string> sts,
+    const std::string& oldVal,
+    const std::string& newVal,
+    int count = 1
+);
+
+/**
+ * generateChars
+ * Generates characters based on selected categories.
+ *
+ * Parameters:
+ * caps -> Include uppercase letters
+ * lows -> Include lowercase letters
+ * nums -> Include digits
+ *
+ * Returns:
+ * Generated string of characters.
+ */
+std::string generateChars(
+    bool caps = true,
+    bool lows = false,
+    bool nums = false
+);
+
 }
 
 #endif

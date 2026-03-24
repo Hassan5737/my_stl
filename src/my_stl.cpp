@@ -633,4 +633,93 @@ bool startsWith(
     return true;
 }
 
+std::vector<std::string> pushItem(
+    const std::vector<std::string>& v,
+    const std::string& item
+)
+{
+    std::vector<std::string> result = v;
+    result.push_back(item);
+    return result;
+}
+
+
+std::string moneyFormat(int n)
+{
+    std::string snum = std::to_string(n);
+    std::string result;
+
+    int count = 0;
+
+    for (int i = snum.size() - 1; i >= 0; i--)
+    {
+        result += snum[i];
+        count++;
+
+        if (count % 3 == 0 && i != 0)
+        {
+            result += ',';
+        }
+    }
+
+    std::reverse(result.begin(), result.end());
+    return result;
+}
+
+
+std::vector<std::string> replaceStrings(
+    std::vector<std::string> sts,
+    const std::string& oldVal,
+    const std::string& newVal,
+    int count
+)
+{
+    for (std::string& s : sts)
+    {
+        if (s == oldVal && count > 0)
+        {
+            s = newVal;
+            count--;
+        }
+    }
+
+    return sts;
+}
+
+
+std::string generateChars(
+    bool caps,
+    bool lows,
+    bool nums
+)
+{
+    std::string result;
+
+    if (caps)
+    {
+        for (char c = 'A'; c <= 'Z'; c++)
+        {
+            result += c;
+        }
+    }
+
+    if (lows)
+    {
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            result += c;
+        }
+    }
+
+    if (nums)
+    {
+        for (char c = '0'; c <= '9'; c++)
+        {
+            result += c;
+        }
+    }
+
+    return result;
+}
+
 }
